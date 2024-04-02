@@ -3,7 +3,7 @@ import Income from '../components/Income'
 const Incomes = () => {
   return (
     <div>
-      <h2>Incomes</h2>
+      <h2 className="my-4">Incomes</h2>
       <ul>
         <Income />
         <Income />

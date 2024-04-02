@@ -12,7 +12,7 @@ export default function App() {
         <Spent />
         <Remaining />
       </div>
-      <div>
+      <div className="w-1/2 max-w-lg">
         <Expenses />
         <Incomes />
       </div>
