@@ -5,8 +5,8 @@ const AddIncome = () => {
       <div className="flex justify-between gap-2">
         <input
           type="text"
-          placeholder="Add income"
-          className="input input-bordered input-success w-full max-w-xs"
+          placeholder="Add income..."
+          className="input input-bordered input-success w-full"
         />
         <button className="btn btn-outline btn-success">Add</button>
       </div>

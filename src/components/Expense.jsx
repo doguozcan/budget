@@ -1,9 +1,9 @@
-const Expense = () => {
+const Expense = (props) => {
   return (
-    <div className="flex items-center justify-between">
-      <p>Expense</p>
-      <div className="badge badge-neutral text-current"> 500TL</div>
-    </div>
+    <li className="flex items-center justify-between">
+      <p>{props.name}</p>
+      <div className="badge badge-neutral text-current">{props.amount} TL</div>
+    </li>
   )
 }
 export default Expense

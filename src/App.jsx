@@ -9,16 +9,16 @@ import AddIncome from './components/AddIncome'
 export default function App() {
   return (
     <div className="flex flex-col items-center font-montserrat">
-      <div className="flex space-x-2 m-4">
+      <div className="flex space-x-2 m-4 w-4/5 justify-around">
         <Total />
         <Spent />
         <Remaining />
       </div>
-      <div className="w-1/2 max-w-lg">
+      <div className="w-4/5 p-2">
         <Expenses />
         <Incomes />
       </div>
-      <div className="w-1/2 max-w-lg">
+      <div className="w-4/5 ">
         <AddIncome />
         <AddExpense />
       </div>
