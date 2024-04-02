@@ -3,6 +3,8 @@ import Spent from './components/Spent'
 import Remaining from './components/Remaining'
 import Expenses from './components/Expenses'
 import Incomes from './components/Incomes'
+import AddExpense from './components/AddExpense.jsx'
+import AddIncome from './components/AddIncome'
 
 export default function App() {
   return (
@@ -15,6 +17,10 @@ export default function App() {
       <div className="w-1/2 max-w-lg">
         <Expenses />
         <Incomes />
+      </div>
+      <div className="w-1/2 max-w-lg">
+        <AddIncome />
+        <AddExpense />
       </div>
     </div>
   )

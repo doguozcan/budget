@@ -2,8 +2,8 @@ import Expense from '../components/Expense'
 
 const Expenses = () => {
   return (
-    <div>
-      <h2 className="my-4">Expenses</h2>
+    <div className="my-4">
+      <h2>Expenses</h2>
       <ul>
         <Expense />
         <Expense />
