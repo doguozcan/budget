@@ -6,14 +6,16 @@ import Incomes from './components/Incomes'
 
 export default function App() {
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex space-x-2 font-montserrat m-4">
+    <div className="flex flex-col items-center font-montserrat">
+      <div className="flex space-x-2 m-4">
         <Total />
         <Spent />
         <Remaining />
       </div>
-      <Expenses />
-      <Incomes />
+      <div>
+        <Expenses />
+        <Incomes />
+      </div>
     </div>
   )
 }
