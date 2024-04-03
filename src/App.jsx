@@ -10,19 +10,21 @@ import { AppProvider } from './context/AppContext.jsx'
 export default function App() {
   return (
     <AppProvider>
-      <div className="flex flex-col items-center font-montserrat">
-        <div className="flex space-x-2 m-4 w-4/5 justify-around">
-          <Total />
-          <Spent />
-          <Earned />
-        </div>
-        <div className="w-4/5">
-          <Expenses />
-          <Incomes />
-        </div>
-        <div className="w-4/5 ">
-          <AddIncome />
-          <AddExpense />
+      <div className="flex justify-center items-center overflow-y-auto">
+        <div className="flex flex-col items-center font-montserrat">
+          <div className="flex m-4 w-4/5 justify-between">
+            <Total />
+            <Spent />
+            <Earned />
+          </div>
+          <div className="w-4/5">
+            <Expenses />
+            <Incomes />
+          </div>
+          <div className="w-4/5 flex flex-col space-y-2">
+            <AddIncome />
+            <AddExpense />
+          </div>
         </div>
       </div>
     </AppProvider>

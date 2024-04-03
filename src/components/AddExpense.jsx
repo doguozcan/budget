@@ -9,6 +9,9 @@ const AddExpense = () => {
   const [expenseName, setExpenseName] = useState('')
   const [expenseAmount, setExpenseAmount] = useState('')
 
+  const canSubmit =
+    expenseName !== '' && expenseAmount !== '' && !isNaN(expenseAmount)
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -43,7 +46,9 @@ const AddExpense = () => {
           value={expenseAmount}
           onChange={(e) => setExpenseAmount(e.target.value)}
         />
-        <button className="btn btn-outline btn-warning">Add</button>
+        <button disabled={!canSubmit} className="btn btn-outline btn-warning">
+          Add
+        </button>
       </div>
     </form>
   )

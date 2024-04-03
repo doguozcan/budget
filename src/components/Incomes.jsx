@@ -7,7 +7,7 @@ const Incomes = () => {
   const incomes = context.state.incomes
 
   return (
-    <div className="my-4">
+    <div className="my-4 overflow-y-auto max-h-48">
       <h2 className="text-lg">Incomes</h2>
       {incomes.length === 0 ? (
         'No incomes yet'
