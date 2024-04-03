@@ -1,6 +1,6 @@
 import Total from './components/Total'
 import Spent from './components/Spent'
-import Remaining from './components/Remaining'
+import Earned from './components/Earned.jsx'
 import Expenses from './components/Expenses'
 import Incomes from './components/Incomes'
 import AddExpense from './components/AddExpense.jsx'
@@ -14,7 +14,7 @@ export default function App() {
         <div className="flex space-x-2 m-4 w-4/5 justify-around">
           <Total />
           <Spent />
-          <Remaining />
+          <Earned />
         </div>
         <div className="w-4/5 p-2">
           <Expenses />

@@ -7,7 +7,7 @@ const AddIncome = () => {
   const { dispatch } = useContext(AppContext)
 
   const [incomeName, setIncomeName] = useState('')
-  const [incomeAmount, setIncomeAmount] = useState(0)
+  const [incomeAmount, setIncomeAmount] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +17,7 @@ const AddIncome = () => {
       payload: {
         id: uuidv4(),
         name: incomeName,
-        amount: incomeAmount,
+        amount: parseInt(incomeAmount),
       },
     })
 
@@ -37,7 +37,7 @@ const AddIncome = () => {
           onChange={(e) => setIncomeName(e.target.value)}
         />
         <input
-          type="number"
+          type="text"
           placeholder="Amount..."
           className="input input-bordered input-success w-full"
           value={incomeAmount}

@@ -1,16 +1,16 @@
 import { createContext, useReducer } from 'react'
 
 const initialState = {
-  total: 1024,
-  incomes: [
-    { id: 1, name: 'Rent', amount: 32 },
-    { id: 2, name: 'Job', amount: 64 },
-  ],
-  expenses: [
-    { id: 1, name: 'Food', amount: 8 },
-    { id: 2, name: 'Travel', amount: 42 },
-    { id: 3, name: 'Cloth', amount: 128 },
-  ],
+  total: 0,
+  incomes: [],
+  expenses: [],
+}
+
+function calculateTotal(incomes, expenses) {
+  const totalIncome = incomes.reduce((acc, curr) => acc + curr.amount, 0)
+  const totalExpense = expenses.reduce((acc, curr) => acc + curr.amount, 0)
+
+  return totalIncome - totalExpense
 }
 
 export const AppContext = createContext()
@@ -18,42 +18,36 @@ export const AppContext = createContext()
 function AppReducer(state, action) {
   switch (action.type) {
     case 'ADD_INCOME':
+      const newIncomes = [...state.incomes, action.payload]
       return {
         ...state,
-        incomes: [...state.incomes, action.payload],
-        total: state.total + action.payload.amount,
+        incomes: newIncomes,
+        total: calculateTotal(newIncomes, state.expenses),
       }
     case 'REMOVE_INCOME':
       const updatedIncomes = state.incomes.filter(
         (income) => income.id !== action.payload
       )
-      const removedIncome = state.incomes.find(
-        (income) => income.id === action.payload
-      )
-
       return {
         ...state,
         incomes: updatedIncomes,
-        total: state.total - removedIncome ? removedIncome.amount : 0,
+        total: calculateTotal(updatedIncomes, state.expenses),
       }
     case 'ADD_EXPENSE':
+      const newExpenses = [...state.expenses, action.payload]
       return {
         ...state,
-        expenses: [...state.expenses, action.payload],
-        total: state.total - action.payload.amount,
+        expenses: newExpenses,
+        total: calculateTotal(state.incomes, newExpenses),
       }
     case 'REMOVE_EXPENSE':
-      const updatedExpense = state.expenses.filter(
+      const updatedExpenses = state.expenses.filter(
         (expense) => expense.id !== action.payload
       )
-      const removedExpense = state.expenses.find(
-        (expense) => expense.id === action.payload
-      )
-
       return {
         ...state,
         expenses: updatedExpense,
-        total: state.total - removedExpense ? removedExpense.amount : 0,
+        total: calculateTotal(state.incomes, updatedExpenses),
       }
     default:
       return state
