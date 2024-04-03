@@ -1,6 +1,6 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useEffect, useReducer } from 'react'
 
-const initialState = {
+const initialState = JSON.parse(sessionStorage.getItem('appState')) || {
   total: 0,
   incomes: [],
   expenses: [],
@@ -56,6 +56,10 @@ function AppReducer(state, action) {
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
+
+  useEffect(() => {
+    sessionStorage.setItem('appState', JSON.stringify(state))
+  }, [state])
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

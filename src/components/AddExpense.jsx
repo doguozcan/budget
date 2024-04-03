@@ -32,18 +32,18 @@ const AddExpense = () => {
         <input
           type="text"
           placeholder="Expense..."
-          className="input input-bordered input-success w-full"
+          className="input input-bordered input-warning w-full"
           value={expenseName}
           onChange={(e) => setExpenseName(e.target.value)}
         />
         <input
           type="text"
           placeholder="Amount..."
-          className="input input-bordered input-success w-full"
+          className="input input-bordered input-warning w-full"
           value={expenseAmount}
           onChange={(e) => setExpenseAmount(e.target.value)}
         />
-        <button className="btn btn-outline btn-success">Add</button>
+        <button className="btn btn-outline btn-warning">Add</button>
       </div>
     </form>
   )
