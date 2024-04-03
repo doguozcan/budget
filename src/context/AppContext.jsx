@@ -46,7 +46,7 @@ function AppReducer(state, action) {
       )
       return {
         ...state,
-        expenses: updatedExpense,
+        expenses: updatedExpenses,
         total: calculateTotal(state.incomes, updatedExpenses),
       }
     default:
