@@ -3,8 +3,8 @@ import { createContext, useReducer } from 'react'
 const initialState = {
   total: 1024,
   incomes: [
-    { id: 1, name: 'Rent', amount: 100 },
-    { id: 2, name: 'Job', amount: 1000 },
+    { id: 1, name: 'Rent', amount: 32 },
+    { id: 2, name: 'Job', amount: 64 },
   ],
   expenses: [
     { id: 1, name: 'Food', amount: 8 },

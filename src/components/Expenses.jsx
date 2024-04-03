@@ -1,11 +1,10 @@
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 import Expense from '../components/Expense'
 
 const Expenses = () => {
-  const expenses = [
-    { id: 1, name: 'Food', amount: 8 },
-    { id: 2, name: 'Travel', amount: 42 },
-    { id: 3, name: 'Cloth', amount: 128 },
-  ]
+  const context = useContext(AppContext)
+  const expenses = context.state.expenses
 
   return (
     <div className="my-4">

@@ -1,7 +1,11 @@
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
+
 const Total = () => {
+  const context = useContext(AppContext)
   return (
     <div className="bg-primary text-primary-content p-3 rounded-sm">
-      Total: 1000 TL
+      Total: {context.state.total} TL
     </div>
   )
 }
