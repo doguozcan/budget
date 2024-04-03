@@ -9,6 +9,9 @@ const AddIncome = () => {
   const [incomeName, setIncomeName] = useState('')
   const [incomeAmount, setIncomeAmount] = useState('')
 
+  const canSubmit =
+    incomeName !== '' && incomeAmount !== '' && !isNaN(incomeAmount)
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -43,7 +46,9 @@ const AddIncome = () => {
           value={incomeAmount}
           onChange={(e) => setIncomeAmount(e.target.value)}
         />
-        <button className="btn btn-outline btn-success">Add</button>
+        <button disabled={!canSubmit} className="btn btn-outline btn-success">
+          Add
+        </button>
       </div>
     </form>
   )
