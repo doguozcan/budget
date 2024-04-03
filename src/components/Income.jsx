@@ -1,8 +1,27 @@
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
+
 const Income = (props) => {
+  const { dispatch } = useContext(AppContext)
+
+  const handleClick = (e) => {
+    e.preventDefault()
+
+    dispatch({
+      type: 'REMOVE_INCOME',
+      payload: props.id,
+    })
+  }
+
   return (
     <li className="flex items-center justify-between">
-      <p>{props.name}</p>
-      <div className="badge badge-neutral text-current">{props.amount} TL</div>
+      <p className="flex-1">{props.name}</p>
+      <div className="badge badge-neutral text-current mr-2">
+        {props.amount} TL
+      </div>
+      <button className="btn btn-xs btn-neutral" onClick={handleClick}>
+        Delete
+      </button>
     </li>
   )
 }

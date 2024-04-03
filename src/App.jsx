@@ -16,7 +16,7 @@ export default function App() {
           <Spent />
           <Earned />
         </div>
-        <div className="w-4/5 p-2">
+        <div className="w-4/5">
           <Expenses />
           <Incomes />
         </div>

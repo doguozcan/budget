@@ -14,7 +14,12 @@ const Incomes = () => {
       ) : (
         <ul>
           {incomes.map((income) => (
-            <Income key={income.id} name={income.name} amount={income.amount} />
+            <Income
+              key={income.id}
+              name={income.name}
+              amount={income.amount}
+              id={income.id}
+            />
           ))}
         </ul>
       )}
