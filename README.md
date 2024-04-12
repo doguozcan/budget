@@ -31,4 +31,4 @@ Budget is an income and expenses tracker where developers can enhance their Cont
 
 ## Live Preview
 
-- You can visit <a href="https://incomparable-squirrel-816caa.netlify.app/">the live preview</a>
+- You can visit <a href="https://sparkling-basbousa-2e0e00.netlify.app/">the live preview</a>
