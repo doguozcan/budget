@@ -4,6 +4,10 @@
 
 Budget is an income and expenses tracker where developers can enhance their Context API skills.
 
+# Screenshot
+
+![budget](https://github.com/doguozcan/budget/assets/76822280/eb5ba47d-0756-452b-98d7-5cf71ab31e9f)
+
 ## Technologies used
 
 - **<a href="https://react.dev/reference/react/createContext">createContext</a>**
